@@ -40,3 +40,7 @@ UPDATE cheese SET stink_level = 1 WHERE name = 'Teleme';
 DELETE FROM cheese WHERE name = 'Epoisses';
 -- Change "Monterey Jack" to "Pepper Jack"
 UPDATE cheese SET name = 'Pepper Jack' WHERE name = 'Monterey Jack';
+-- Add milk type column
+ALTER TABLE cheese ADD animal_milk VARCHAR(50);
+--ADD PASTEURIZED 
+ALTER TABLE cheese ADD pasteurized BOOLEAN;

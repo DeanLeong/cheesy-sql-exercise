@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS cheeses_db;
 CREATE DATABASE cheeses_db;
 
 \c cheeses_db;
