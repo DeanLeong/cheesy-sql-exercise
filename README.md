@@ -10,38 +10,53 @@ Yeah, me neither, I've never had that issue. Never. Never, never, ever.
 
 But say we did. To solve this "hypothetical" problem, let's build a psql database that will organize all the cheeses.
 
-## Mission
-
-Create a `cheeses_db` database as a collection to store cheeses. Each record should store a **name, color, origin, and stink_level**.
-
-Keep track of your commands! Write out your answers in the provided `cheeses.sql.`
-
 ## Requirements
 
 - Fork and clone this repo.
-- Use the cheesy.sql as your "answer sheet"
-- Use the base.sql as your "seed file"
-- From the command line, let's create a new database called `cheeses_db` and populate it with the data below.
+- From the command line, create a new database called `cheeses_db` and populate it with the data below.
+- Use the `base.sql` as your "schema and seed file"
+  - if you ever need to reset your data, just re-run `base.sql`
+- Use the `cheesy.sql` as your "answer sheet"
 
-```
+## Mission
+
+Create a `cheeses_db` database as a collection to store cheeses.
+
+```SQL
+
 # Enter psql
 psql
 
 # Create database
 CREATE DATABASE cheeses_db;
+```
+
+-- OR --
+
+directly from our bash terminal command line:
+```BASH
+
+createdb cheeses_db
+```
+
+Then create a table named `cheeses`. Each record should store a **name, color, origin, and stink_level**. This can all be written out inside of the `base.sql` file.
+
+When you are ready to run this file, you can do so with the following command in terminal:
+
+```
+# Enter psql
+psql
 
 # Connect to cheeses_db
 \c cheeses_db
-\i cheesy.sql
+\i base.sql
 ```
 
 **Pro Tip:** You can do this in one step with the command:
 
 ```bash
-psql -d cheeses_db -f /your/path/to/this/file/cheesy.sql
+psql -d cheeses_db -f /your/path/to/this/file/base.sql
 ```
-
-**Exception** - Want to write a seed file for all the cheese info (located in the section below)? Go for it!
 
 #### Buying Cheese
 
@@ -58,7 +73,7 @@ Add these cheeses to your database:
 
 #### Choosing Cheese
 
-Now write PostgreSQL queries to accomplish the following:
+Now write PostgreSQL queries to accomplish the following. Write out your answers in the provided `cheeses.sql`. You can check you answers by running the file the same way that you ran the `base.sql` file.
 
 - Find all the cheeses
 - Find all the French cheeses
