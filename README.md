@@ -12,7 +12,6 @@ But say we did. To solve this "hypothetical" problem, let's build a psql databas
 
 ## Requirements
 
-- Fork and clone this repo.
 - From the command line, create a new database called `cheeses_db` and populate it with the data below.
 - Use the `base.sql` as your "schema and seed file"
   - if you ever need to reset your data, just re-run `base.sql`
