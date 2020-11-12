@@ -10,16 +10,11 @@ Yeah, me neither, I've never had that issue. Never. Never, never, ever.
 
 But say we did. To solve this "hypothetical" problem, let's build a psql database that will organize all the cheeses.
 
-## Requirements
+## Setup
 
-- From the command line, create a new database called `cheeses_db` and populate it with the data below.
-- Use the `base.sql` as your "schema and seed file"
-  - if you ever need to reset your data, just re-run `base.sql`
-- Use the `cheesy.sql` as your "answer sheet"
-
-## Mission
-
-Create a `cheeses_db` database as a collection to store cheeses.
+- clone
+- `cd` into the repo
+- Create a `cheeses_db` database as a collection to store cheeses.
 
 ```SQL
 
@@ -38,7 +33,24 @@ directly from our bash terminal command line:
 createdb cheeses_db
 ```
 
-Then create a table named `cheeses`. Each record should store a **name, color, origin, and stink_level**. This can all be written out inside of the `base.sql` file.
+## Schema and Seed
+
+Use the `base.sql` as your "schema and seed file"
+
+Create a table named `cheeses`. Each record should store a **name, color, origin, and stink_level**. This can all be written out inside of the `base.sql` file.
+
+#### Buying Cheese
+
+Add these cheeses to your database as seed data:
+
+- Roquefort, a yellow french cheese with a stink level of 5
+- Epoisses, an orange french cheese with a stink level of 9
+- Charolais, a white french cheese with a stink level of 5
+- Maroilles, a white french cheese with a stink level of 10
+- Durrus, a yellow Irish cheese with a stink level of 2
+- Hooligan, a yellow American cheese with a stink level of 3
+- Teleme, a white american cheese with a stink level of 2
+- Stichelton, a white English cheese with a stink level of 4
 
 When you are ready to run this file, you can do so with the following command in terminal:
 
@@ -54,25 +66,22 @@ psql
 **Pro Tip:** You can do this in one step with the command:
 
 ```bash
-psql -d cheeses_db -f /your/path/to/this/file/base.sql
+psql -d cheeses_db -f base.sql
 ```
 
-#### Buying Cheese
+> if you ever need to reset your data, just re-run `base.sql`
 
-Add these cheeses to your database:
+## Selecting and Modifying data
 
-- Roquefort, a yellow french cheese with a stink level of 5
-- Epoisses, an orange french cheese with a stink level of 9
-- Charolais, a white french cheese with a stink level of 5
-- Maroilles, a white french cheese with a stink level of 10
-- Durrus, a yellow Irish cheese with a stink level of 2
-- Hooligan, a yellow American cheese with a stink level of 3
-- Teleme, a white american cheese with a stink level of 2
-- Stichelton, a white English cheese with a stink level of 4
+Use the `cheesy.sql` as your "answer sheet". From here we will play around with our data.
+
+Remember if your data gets too messy, you can always reset by re-running your `base.sql` file.
 
 #### Choosing Cheese
 
 Now write PostgreSQL queries to accomplish the following. Write out your answers in the provided `cheeses.sql`. You can check you answers by running the file the same way that you ran the `base.sql` file.
+
+> If you prefer to test inside of the `psql` terminal repl, remember to record your working answers to the `cheeses.sql` file.
 
 - Find all the cheeses
 - Find all the French cheeses
@@ -90,7 +99,7 @@ Now write PostgreSQL queries to accomplish the following. Write out your answers
 
 #### Restocking Cheese
 
-The cheese game is changing constantly. Let's update our cheeses. Save your queries after you get them working in the command line.
+The cheese game is changing constantly. Let's update our cheeses.
 
 - Change the stink level of Roquefort to 3
 - Change the color of Teleme to "mauve"
@@ -103,14 +112,14 @@ The cheese game is changing constantly. Let's update our cheeses. Save your quer
 - Change "Monterey Jack" to "Pepper Jack"
 
 
-|name| animal_milk | pasteurized|
-|-------------|------:|------------:|
+| name | animal_milk | pasteurized |
+| ------------- | ------:| ------------:|
 | Epoisses | cow | true |
 | Charolais | goat | false |
 | Maroilles | cow | false |
-|Durrus | cow | false |
-|Roquefort | sheep | false |
-|Teleme | cow | true |
-|Stichelton | cow | true |
-|Monterey Jack| cow | true |
+| Durrus | cow | false |
+| Roquefort | sheep | false |
+| Teleme | cow | true |
+| Stichelton | cow | true |
+| Monterey Jack | cow | true |
 
