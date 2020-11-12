@@ -69,17 +69,17 @@ psql
 psql -d cheeses_db -f base.sql
 ```
 
-> if you ever need to reset your data, just re-run `base.sql`
+> if you ever need to reset your data, just re-run `base.sql`. It will clear out the database and then re-create everything, including the seed data.
 
 ## Selecting and Modifying data
 
-Use the `cheesy.sql` as your "answer sheet". From here we will play around with our data.
+Use the `cheesy.sql` as your "answer sheet". From here on out, we will be tinkering with our data.
 
-Remember if your data gets too messy, you can always reset by re-running your `base.sql` file.
+Remember if your data gets too messy, you can always reset by re-running the `base.sql` file.
 
 #### Choosing Cheese
 
-Now write PostgreSQL queries to accomplish the following. Write out your answers in the provided `cheeses.sql`. You can check you answers by running the file the same way that you ran the `base.sql` file.
+Now write PostgreSQL queries to accomplish the following. Write out your answers in the provided `cheeses.sql`. You can check your answers by running the file the same way that you ran the `base.sql` file.
 
 > If you prefer to test inside of the `psql` terminal repl, remember to record your working answers to the `cheeses.sql` file.
 
